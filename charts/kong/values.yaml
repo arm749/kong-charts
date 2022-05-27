@@ -47,9 +47,12 @@ deployment:
   # userDefinedVolumeMounts:
   # - name: "volumeName"
   #   mountPath: "/opt/user/dir/mount"
-  test:
+  testResources:
     # Enable creation of test resources for use with "helm test"
     enabled: false
+  testJobs:
+    # Disable creation of test pods
+    enabled: true
   # Use a DaemonSet controller instead of a Deployment controller
   daemonset: false
   hostNetwork: false

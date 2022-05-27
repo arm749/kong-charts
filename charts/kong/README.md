@@ -725,6 +725,7 @@ kong:
 | deployment.serviceAccount.create   | Create Service Account for the Deployment / Daemonset and the migrations              | `true`              |
 | deployment.serviceAccount.name     | Name of the Service Account, a default one will be generated if left blank.           | ""                  |
 | deployment.serviceAccount.annotations | Annotations for the Service Account                                                | {}                  |
+| deployment.testJobs.enabled        | Enable or disable test pods                                                       | `true`
 | autoscaling.enabled                | Set this to `true` to enable autoscaling                                              | `false`             |
 | autoscaling.minReplicas            | Set minimum number of replicas                                                        | `2`                 |
 | autoscaling.maxReplicas            | Set maximum number of replicas                                                        | `5`                 |
