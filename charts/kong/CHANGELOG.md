@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet.
+* Added option to disable test job pods.
 
 ## 2.8.1
 
