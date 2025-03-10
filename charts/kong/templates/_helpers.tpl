@@ -173,7 +173,7 @@ Create Service resource for a Kong service
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .fullName }}-{{ .serviceName }}
+  name: {{ .overrideName | default (printf "%s-%s" .fullName .serviceName) }}
   namespace: {{ .namespace }}
   {{- if .annotations }}
   annotations:
