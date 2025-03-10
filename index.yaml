@@ -1,6 +1,91 @@
 apiVersion: v1
 entries:
+  gateway-operator:
+  - annotations:
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: "1.4"
+    created: "2025-03-10T14:47:54.214430098Z"
+    dependencies:
+    - condition: kic-crds.enabled
+      name: kic-crds
+      repository: ""
+      version: 3.2.0
+    - condition: gwapi-standard-crds.enabled
+      name: gwapi-standard-crds
+      repository: ""
+      version: 1.1.0
+    - condition: gwapi-experimental-crds.enabled
+      name: gwapi-experimental-crds
+      repository: ""
+      version: 1.1.0
+    - condition: kubernetes-configuration-crds.enabled
+      name: kubernetes-configuration-crds
+      repository: ""
+      version: 1.0.8
+    description: Deploy Kong Gateway Operator
+    digest: 9c12432a7b90b2c54d7d55a804369ec6b51273878f50373d118000f2383160bc
+    home: https://konghq.com/
+    icon: https://s3.amazonaws.com/downloads.kong/universe/assets/icon-kong-inc-large.png
+    maintainers:
+    - email: team-k8s@konghq.com
+      name: team-k8s-bot
+    name: gateway-operator
+    sources:
+    - https://github.com/Kong/charts/tree/main/charts/gateway-operator
+    urls:
+    - https://github.com/arm749/kong-charts/releases/download/gateway-operator-0.4.10-rc.1/gateway-operator-0.4.10-rc.1.tgz
+    version: 0.4.10-rc.1
+  ingress:
+  - apiVersion: v2
+    appVersion: "3.9"
+    created: "2025-03-10T14:47:54.373448554Z"
+    dependencies:
+    - alias: controller
+      condition: controller.enabled
+      name: kong
+      repository: https://charts.konghq.com
+      version: =2.47.0
+    - alias: gateway
+      condition: gateway.enabled
+      name: kong
+      repository: https://charts.konghq.com
+      version: =2.47.0
+    description: Deploy Kong Ingress Controller and Kong Gateway
+    digest: 696346ecb2672e462a6c3289920281083d1f65941e89efdfcec1dba032a68a44
+    home: https://konghq.com/
+    icon: https://s3.amazonaws.com/downloads.kong/universe/assets/icon-kong-inc-large.png
+    maintainers:
+    - email: team-k8s@konghq.com
+      name: team-k8s-bot
+    name: ingress
+    sources:
+    - https://github.com/Kong/charts/tree/main/charts/ingress
+    urls:
+    - https://github.com/arm749/kong-charts/releases/download/ingress-0.18.0/ingress-0.18.0.tgz
+    version: 0.18.0
   kong:
+  - apiVersion: v2
+    appVersion: "3.9"
+    created: "2025-03-10T14:47:54.508532497Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.9.13
+    description: The Cloud-Native Ingress and API-management
+    digest: 0ed971b74f9d0c7f09203ed14ae1b43949ec6fe49d9acb310fbcbe54adbd7c29
+    home: https://konghq.com/
+    icon: https://s3.amazonaws.com/downloads.kong/universe/assets/icon-kong-inc-large.png
+    maintainers:
+    - email: team-k8s@konghq.com
+      name: team-k8s-bot
+    name: kong
+    sources:
+    - https://github.com/Kong/charts/tree/main/charts/kong
+    urls:
+    - https://github.com/arm749/kong-charts/releases/download/kong-2.47.0/kong-2.47.0.tgz
+    version: 2.47.0
   - apiVersion: v2
     appVersion: "2.8"
     created: "2022-05-16T20:40:42.096630143Z"
@@ -896,4 +981,4 @@ entries:
     urls:
     - https://github.com/Kong/charts/releases/download/kong-0.36.5/kong-0.36.5.tgz
     version: 0.36.5
-generated: "2022-05-16T20:40:42.09726965Z"
+generated: "2025-03-10T14:47:54.508716331Z"
